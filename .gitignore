@@ -1,16 +1,21 @@
 # Secrets & Keys
 .env
+config.py
+client_secret.json
+token.pickle
+*.key
 
 # Virtual Environment
 Pvenv/
+venv/
+env/
 
 # Generated Data/Reports
 data/reports/
 agent.log
 phishing_batch_results.csv
 
-# Datasets (Large Files)
-archive/
+# Archive - KEEP test samples but exclude zip
 archive.zip
 
 # Cache & Temp
@@ -21,5 +26,12 @@ __pycache__/
 
 # Other Temp
 *.log
-*.zip
-*.csv  # Exclude any generated CSVs like phishing_batch_results.csv
+*.csv  # Exclude any generated CSVs
+
+# IDE
+.vscode/
+.idea/
+
+# Chrome Extension
+chrome_extension/*.pem
+chrome_extension/*.crx

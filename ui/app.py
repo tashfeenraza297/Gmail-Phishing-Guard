@@ -1,11 +1,17 @@
 # ui/app.py
-import project_root
+import sys
+from pathlib import Path
+
+# Add project root to path
+project_root = Path(__file__).parent.parent.resolve()
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
 import streamlit as st
 import pandas as pd
 import json
 import requests
 from tools.csv_loader import load_phishing_csv
-from pathlib import Path
 
 st.set_page_config(page_title="PhishGuard", layout="wide")
 st.title("AI Phishing Detection Agent")
@@ -29,12 +35,64 @@ with tab1:
                     payload = {"input": inp.strip(), "type": typ}
                     r = requests.post(API_URL, json=payload, timeout=30)
                     result = r.json()
-                    st.json(result, expanded=False)
+                    
+                    # === BEAUTIFUL OUTPUT (not raw JSON) ===
+                    st.markdown("---")
+                    
+                    # Header with risk score
+                    risk = result.get("risk_score", 0)
+                    classification = result.get("classification", "Unknown")
+                    
+                    if risk >= 70:
+                        st.error(f"### 🚨 {classification} - Risk Score: {risk}/100")
+                    elif risk >= 40:
+                        st.warning(f"### ⚠️ {classification} - Risk Score: {risk}/100")
+                    else:
+                        st.success(f"### ✅ {classification} - Risk Score: {risk}/100")
+                    
+                    # Alert banner
                     alert = result.get("alert", "Unknown")
                     if "DANGER" in alert:
                         st.error(f"**{alert}**")
                     else:
                         st.success(f"**{alert}**")
+                    
+                    # LLM Analysis
+                    llm = result.get("llm", {})
+                    st.markdown("#### 🧠 AI Analysis")
+                    st.info(llm.get("reason", "No analysis available"))
+                    st.markdown(f"**Recommended Action:** {llm.get('action', 'N/A')}")
+                    
+                    # Rule Detection
+                    rule = result.get("rule", {})
+                    if rule.get("suspected"):
+                        st.markdown("#### 🔍 Rule Detection")
+                        for reason in rule.get("reasons", []):
+                            st.markdown(f"- ⚠️ {reason}")
+                    
+                    # Threat Intelligence
+                    intel = result.get("intel", [])
+                    if intel and any(i.get("source") != "Skipped" for i in intel):
+                        st.markdown("#### 🛡️ Threat Intelligence")
+                        for i in intel:
+                            if i.get("source") != "Skipped":
+                                source = i.get("source", "Unknown")
+                                threat = i.get("threat_level", "N/A")
+                                
+                                if source == "VirusTotal":
+                                    mal = i.get("malicious", 0)
+                                    total = i.get("total", 0)
+                                    st.markdown(f"**{source}:** {mal}/{total} engines flagged as malicious ({threat} threat)")
+                                elif source == "AlienVault OTX":
+                                    pulses = i.get("pulses", 0)
+                                    st.markdown(f"**{source}:** {pulses} threat reports ({threat} threat)")
+                                else:
+                                    st.markdown(f"**{source}:** {i}")
+                    
+                    # Expandable JSON (for technical users)
+                    with st.expander("📄 View Raw JSON"):
+                        st.json(result, expanded=False)
+                    
                 except Exception as e:
                     st.error(f"API Error: {e}")
         else:

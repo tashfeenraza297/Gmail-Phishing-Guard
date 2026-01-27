@@ -1,11 +1,21 @@
 # error_handler.py
 import logging
+import sys
 from functools import wraps
+
+# Fix Windows emoji encoding issues
+if sys.platform == 'win32':
+    import codecs
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-    handlers=[logging.FileHandler("data/agent.log"), logging.StreamHandler()]
+    handlers=[
+        logging.FileHandler("data/agent.log", encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 log = logging.getLogger("PhishingAgent")
 

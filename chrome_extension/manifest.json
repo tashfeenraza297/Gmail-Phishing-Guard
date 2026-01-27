@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard - AI Phishing Detector",
+  "version": "1.0.0",
+  "description": "AI-powered email phishing detection with real-time monitoring and smart threat analysis",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "identity"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "https://*.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "options_page": "settings.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "oauth2": {
+    "client_id": "253049063480-grqkfgrfk77k8fbebjgc4u095f32sn85.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly"
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["email_selector.html", "email_selector.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -57,15 +57,21 @@ cd ai-phishing-detection-agent
 # 2. Install
 pip install -r requirements.txt
 
-# 3. Add API Keys
+# 3. Check Setup
+python setup_check.py  # Validates environment
+
+# 4. Add API Keys
 cp .env.example .env
 # Edit .env with your keys
 
-# 4. Run API
+# 5. Run API
 uvicorn main:app --reload
 
-# 5. Run UI (new terminal)
+# 6. Run UI (new terminal)
 streamlit run ui/app.py
+
+# 7. Test Everything
+python test_csv.py
 Test: Scan https://secure-paypa1.com/login → DANGER – BLOCK!
 
 Folder Structure

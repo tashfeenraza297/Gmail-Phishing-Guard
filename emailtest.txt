@@ -1,0 +1,87 @@
+Email 1: Fake Bank Alert
+
+Subject: URGENT: Suspicious Activity Detected
+From: security@chasebank-verify.com
+
+Dear Valued Customer,
+
+We have detected unusual activity on your account. Please verify your identity immediately to prevent account suspension.
+
+Click here to secure your account: https://chase-online-banking.secure-login.net/verify
+
+Your account will be locked in 24 hours if not verified.
+
+Chase Bank Security Team
+
+
+Email 2: CEO Fraud (Business Email Compromise)
+Subject: Urgent Payment Required
+From: ceo@yourcompany.com.secure.net
+
+Hi,
+
+I'm in a meeting and need you to process an urgent wire transfer immediately. Our vendor needs payment today.
+
+Amount: $45,000
+Account details: http://bit.ly/vendor-payment-urgent
+
+Please confirm once done. This is time-sensitive.
+
+Thanks,
+John Smith, CEO
+
+
+Email 3: Fake Package Delivery
+Subject: Your package delivery failed - Action Required
+From: delivery@fedex-tracking.info
+
+Tracking #: FX-8934729834
+
+Your package could not be delivered due to incorrect address. 
+
+Update your delivery address here: https://fedex-redelivery.com/update?id=8934729834
+
+Package will be returned to sender in 48 hours if not updated.
+
+FedEx Customer Service
+
+
+Email 1: Genuine Newsletter
+Subject: Weekly Tech Newsletter - January 2026
+From: newsletter@techcrunch.com
+
+This Week in Tech:
+
+• AI advances in 2026
+• New smartphone releases
+• Startup funding news
+
+Read more: https://techcrunch.com/newsletter/jan-2026
+
+Unsubscribe: https://techcrunch.com/unsubscribe
+
+
+Email 2: Real Company Update
+Subject: Your GitHub monthly activity summary
+From: noreply@github.com
+
+Hi there,
+
+Here's your January activity:
+- 15 commits
+- 3 pull requests merged
+- 2 new repositories
+
+View full report: https://github.com/your-username
+
+GitHub Team
+
+
+
+
+For the 2-3 Additional Projects (Build These):
+Since you have strong AI/CV, add diversity:
+
+Web Dashboard - Interactive data visualization (shows full-stack)
+Web Scraping + Analysis Tool - Practical automation
+Simple CRUD API - REST API with database (shows backend skills)
