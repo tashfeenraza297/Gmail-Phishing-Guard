@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "PhishGuard - AI Phishing Detector",
   "version": "1.0.0",
-  "description": "AI-powered email phishing detection with real-time monitoring and smart threat analysis",
+  "description": "AI-powered phishing detection for Gmail. Multi-layer analysis using Rules, VirusTotal, AlienVault OTX, and Google Gemini AI. Real-time monitoring with instant desktop alerts.",
   "permissions": [
     "storage",
     "alarms",
@@ -11,6 +11,8 @@
   ],
   "host_permissions": [
     "http://localhost:8000/*",
+    "https://*/*",
+    "http://*/*",
     "https://*.googleapis.com/*"
   ],
   "background": {

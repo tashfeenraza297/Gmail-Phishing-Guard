@@ -6,8 +6,9 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.121.1-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-4285F4)](https://developer.chrome.com/docs/extensions/mv3/intro/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Gmail API](https://img.shields.io/badge/Gmail-API-EA4335?logo=gmail&logoColor=white)](https://developers.google.com/gmail/api)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Gmail API](https://img.shields.io/badge/Gmail-API-EA4335?logo=gmail&logoColor=white)](https://developers.google.com/gmail/api/)
+[![Edge Add-ons](https://img.shields.io/badge/Edge-Add--ons-0078D4?logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons/)
 [![Google AI](https://img.shields.io/badge/Google-Gemini%20AI-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-API-394EFF?logo=virustotal&logoColor=white)](https://www.virustotal.com/)
 
@@ -183,6 +184,18 @@ Server will run at `http://localhost:8000`
    - Click "Load unpacked"
    - Select `chrome_extension` folder
    - Pin extension to toolbar
+
+4. **Load Extension in Microsoft Edge** *(alternative — free store publishing)*
+   - Open Edge → `edge://extensions/`
+   - Enable "Developer mode" (left sidebar toggle)
+   - Click "Load unpacked"
+   - Select `chrome_extension` folder
+   - Same extension, works identically on Edge
+
+> **Publishing to Edge Add-ons Store (FREE):**
+> 1. Register at [Microsoft Partner Center](https://partner.microsoft.com/dashboard/microsoftedge/)
+> 2. Zip the `chrome_extension/` folder
+> 3. Submit under "Microsoft Edge extensions" — no fee required
 
 ---
 
@@ -389,7 +402,8 @@ Gmail-Phishing-Guard/
 - [ ] Support for Outlook, Yahoo Mail, ProtonMail
 - [ ] Multi-language phishing detection
 - [ ] Machine learning model training on custom datasets
-- [ ] Browser add-ons for Firefox, Edge
+- [x] Microsoft Edge Add-ons support (Chromium-based, same codebase)
+- [ ] Firefox Add-on port
 - [ ] Email quarantine and safe link rewriting
 - [ ] Team collaboration features (shared threat feeds)
 - [ ] Integration with SIEM platforms
@@ -399,7 +413,13 @@ Gmail-Phishing-Guard/
 
 ## 📝 License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+```
+Copyright (c) 2026 Tashfeen Raza
+```
+
+You are free to use, modify, and distribute this project. Any copies or derivatives **must** include the original copyright notice.
 
 ---
 
